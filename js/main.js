@@ -17,7 +17,7 @@ $(document).ready(
     );
     function nextImage() {
       // console.log("destra");
-      
+
       var activeImage = $(".images img.active");
       console.log(activeImage);
       var activeDot = $(".nav i.active");
@@ -38,6 +38,23 @@ $(document).ready(
 
       var activeImage = $(".images img.active");
       var activeDot = $(".nav i.active");
+
+      activeImage.removeClass("active");
+      activeDot.removeClass("active");
+
+      if (activeImage.hasClass("first") == true){
+        $(".images img:last-child").addClass("active");
+        $(".nav i:last-child").addClass("active");
+      }else {
+        activeImage.prev().addClass("active");
+        activeDot.prev().addClass("active");
+
+      }
+
+      activeImage.prev().addClass("active");
+      activeDot.prev().addClass("active");
+
+
 
     }
   }
