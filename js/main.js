@@ -54,8 +54,17 @@ $(document).ready(
       activeImage.prev().addClass("active");
       activeDot.prev().addClass("active");
 
-
-
     }
+    
+    $(document).keydown(
+      function() {
+        console.log(event.keyCode);
+        if (event.keyCode == 37) {
+          prevImage();
+        }else if (event.keyCode == 39){
+          nextImage();
+        }
+      }
+    )
   }
 );
